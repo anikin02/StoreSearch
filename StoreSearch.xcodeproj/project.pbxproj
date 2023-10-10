@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		783EF5FA2AD3C35600483634 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EF5F92AD3C35600483634 /* AppDelegate.swift */; };
 		783EF5FC2AD3C35600483634 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EF5FB2AD3C35600483634 /* SceneDelegate.swift */; };
-		783EF5FE2AD3C35600483634 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EF5FD2AD3C35600483634 /* ViewController.swift */; };
+		783EF5FE2AD3C35600483634 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EF5FD2AD3C35600483634 /* SearchViewController.swift */; };
 		783EF6012AD3C35600483634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783EF5FF2AD3C35600483634 /* Main.storyboard */; };
 		783EF6032AD3C35800483634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783EF6022AD3C35800483634 /* Assets.xcassets */; };
 		783EF6062AD3C35800483634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783EF6042AD3C35800483634 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		783EF5F62AD3C35600483634 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783EF5F92AD3C35600483634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783EF5FB2AD3C35600483634 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		783EF5FD2AD3C35600483634 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		783EF5FD2AD3C35600483634 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		783EF6002AD3C35600483634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		783EF6022AD3C35800483634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		783EF6052AD3C35800483634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,39 @@
 		783EF5F82AD3C35600483634 /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				783EF6112AD6103A00483634 /* View Controllers */,
+				783EF6102AD6102300483634 /* Data Models */,
+				783EF60E2AD60FFA00483634 /* Resources */,
 				783EF5F92AD3C35600483634 /* AppDelegate.swift */,
 				783EF5FB2AD3C35600483634 /* SceneDelegate.swift */,
-				783EF5FD2AD3C35600483634 /* ViewController.swift */,
 				783EF5FF2AD3C35600483634 /* Main.storyboard */,
-				783EF6022AD3C35800483634 /* Assets.xcassets */,
 				783EF6042AD3C35800483634 /* LaunchScreen.storyboard */,
 				783EF6072AD3C35800483634 /* Info.plist */,
 			);
 			path = StoreSearch;
+			sourceTree = "<group>";
+		};
+		783EF60E2AD60FFA00483634 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				783EF6022AD3C35800483634 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		783EF6102AD6102300483634 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		783EF6112AD6103A00483634 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				783EF5FD2AD3C35600483634 /* SearchViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783EF5FE2AD3C35600483634 /* ViewController.swift in Sources */,
+				783EF5FE2AD3C35600483634 /* SearchViewController.swift in Sources */,
 				783EF5FA2AD3C35600483634 /* AppDelegate.swift in Sources */,
 				783EF5FC2AD3C35600483634 /* SceneDelegate.swift in Sources */,
 			);
