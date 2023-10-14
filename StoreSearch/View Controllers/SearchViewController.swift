@@ -11,6 +11,7 @@ class SearchViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
   
+  var hasSearched = false
   var searchResults = [SearchResult]()
   
   override func viewDidLoad() {
@@ -26,8 +27,10 @@ extension SearchViewController: UISearchBarDelegate {
   func position(for bar: UIBarPositioning) -> UIBarPosition {
     return .topAttached
   }
+  
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-    for i in 0...2 { 
+    hasSearched = true
+    for i in 0...2 {
       let result = SearchResult(name: String(format: "Fake Result %d for", i), nameArtist: searchBar.text!)
       searchResults.append(result)
     }
@@ -40,7 +43,25 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return searchResults.count
+    if !hasSearched {
+      return 0
+    } else if searchResults.isEmpty {
+      return 1
+    } else {
+      return searchResults.count
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+  
+  func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    if searchResults.isEmpty {
+      return nil
+    } else {
+      return indexPath
+    }
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,10 +69,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
     
     if cell == nil {
-      cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+      cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
     }
     
-    cell!.textLabel!.text = searchResults[indexPath.row]
+    if searchResults.isEmpty {
+      cell!.textLabel!.text = "Nothing found"
+      cell!.detailTextLabel!.text = ""
+    } else {
+      let searchResult = searchResults[indexPath.row]
+      
+      cell!.textLabel!.text = searchResult.name
+      cell!.detailTextLabel!.text = searchResult.nameArtist
+    }
+    
     return cell!
   }
 }
