@@ -20,11 +20,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DJg-7y-t9q"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="VKH-gc-f5S"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UVk-7C-trZ"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" id="P9S-AM-UOB">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="51" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -43,7 +44,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="P9S-AM-UOB" id="tnF-sn-H2T"/>
-                        <outlet property="tableView" destination="WaP-X9-sOI" id="oUV-Mq-kGe"/>
+                        <outlet property="tableView" destination="WaP-X9-sOI" id="CtH-np-u9R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
