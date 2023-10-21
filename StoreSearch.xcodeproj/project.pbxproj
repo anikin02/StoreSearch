@@ -14,6 +14,8 @@
 		783EF6032AD3C35800483634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783EF6022AD3C35800483634 /* Assets.xcassets */; };
 		783EF6062AD3C35800483634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783EF6042AD3C35800483634 /* LaunchScreen.storyboard */; };
 		783EF6132ADAB85C00483634 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EF6122ADAB85C00483634 /* SearchResult.swift */; };
+		784EF2372AE37F6B00419383 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784EF2362AE37F6B00419383 /* SearchResultCell.xib */; };
+		784EF2392AE3900F00419383 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784EF2382AE3900F00419383 /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		783EF6052AD3C35800483634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783EF6072AD3C35800483634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		783EF6122ADAB85C00483634 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		784EF2362AE37F6B00419383 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		784EF2382AE3900F00419383 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,9 @@
 				783EF5FB2AD3C35600483634 /* SceneDelegate.swift */,
 				783EF5FF2AD3C35600483634 /* Main.storyboard */,
 				783EF6042AD3C35800483634 /* LaunchScreen.storyboard */,
+				784EF2362AE37F6B00419383 /* SearchResultCell.xib */,
 				783EF6072AD3C35800483634 /* Info.plist */,
+				784EF2382AE3900F00419383 /* SearchResultCell.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			files = (
 				783EF6062AD3C35800483634 /* LaunchScreen.storyboard in Resources */,
 				783EF6032AD3C35800483634 /* Assets.xcassets in Resources */,
+				784EF2372AE37F6B00419383 /* SearchResultCell.xib in Resources */,
 				783EF6012AD3C35600483634 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +176,7 @@
 				783EF5FA2AD3C35600483634 /* AppDelegate.swift in Sources */,
 				783EF6132ADAB85C00483634 /* SearchResult.swift in Sources */,
 				783EF5FC2AD3C35600483634 /* SceneDelegate.swift in Sources */,
+				784EF2392AE3900F00419383 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
