@@ -19,8 +19,11 @@ class SearchViewController: UIViewController {
     
     tableView.contentInset = UIEdgeInsets(top: 51, left: 0, bottom: 0, right: 0)
     
-    let cellNib = UINib(nibName: "SearchResultCell", bundle: nil)
+    var cellNib = UINib(nibName: "SearchResultCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "SearchResultCell")
+    
+    cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
+    tableView.register( cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
   }
 }
 
@@ -43,6 +46,13 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 // MARK: - Table View Delegate extension
+
+struct TableView {
+  struct CellIdentifiers {
+    static let searchResultCell = "SearchResultCell"
+    static let nothingFoundCell = "NothingFoundCell"
+  }
+}
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,20 +78,22 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cellIdentifier = "SearchResultCell"
-    let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SearchResultCell
-    
     if searchResults.isEmpty {
-      cell.nameLabel.text = "Nothing found"
-      cell.nameArtistLabel.text = ""
+      return tableView.dequeueReusableCell(
+        withIdentifier: TableView.CellIdentifiers.nothingFoundCell,
+        for: indexPath)
     } else {
+      let cell = tableView.dequeueReusableCell(
+        withIdentifier: TableView.CellIdentifiers.searchResultCell,
+        for: indexPath) as! SearchResultCell
+      
       let searchResult = searchResults[indexPath.row]
       
       cell.nameLabel.text = searchResult.name
       cell.nameArtistLabel.text = searchResult.nameArtist
+      
+      return cell
     }
-    
-    return cell
   }
 }
 
