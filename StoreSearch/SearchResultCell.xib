@@ -46,6 +46,7 @@
                     <constraint firstItem="2P3-Zn-C7e" firstAttribute="top" secondItem="oia-v7-uK4" secondAttribute="top" constant="10" id="bBA-Km-2hG"/>
                     <constraint firstItem="v4x-Yp-CTq" firstAttribute="leading" secondItem="2P3-Zn-C7e" secondAttribute="trailing" constant="8" id="oKS-7Y-izv"/>
                     <constraint firstItem="8Hg-Fj-YlK" firstAttribute="leading" secondItem="2P3-Zn-C7e" secondAttribute="trailing" constant="8" id="ygl-Zf-TYr"/>
+                    <constraint firstAttribute="bottom" secondItem="2P3-Zn-C7e" secondAttribute="bottom" constant="10" id="yuc-dP-cDo"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
