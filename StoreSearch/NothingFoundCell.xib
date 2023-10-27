@@ -28,6 +28,7 @@
                     <constraint firstItem="XaY-jB-gu3" firstAttribute="centerY" secondItem="NQr-Zd-HON" secondAttribute="centerY" id="CTi-Ez-eYq"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="tintColor" red="0.97254902119999997" green="0.65882354970000001" blue="0.87843137979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <point key="canvasLocation" x="153" y="19"/>
         </tableViewCell>
     </objects>
