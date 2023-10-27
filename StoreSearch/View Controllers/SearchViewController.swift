@@ -45,6 +45,8 @@ class SearchViewController: UIViewController {
     } catch {
       print("Download Error: \(error.localizedDescription)")
     }
+    
+    showNetworkError()
     return nil
   }
   
@@ -57,6 +59,21 @@ class SearchViewController: UIViewController {
       print("JSON Error: \(error)")
       return []
     }
+  }
+  
+  func showNetworkError() {
+    let alert = UIAlertController (
+      title: "Whoops…",
+      message: "There was an error accessing the iTunes Store.\nPlease try again.",
+      preferredStyle: .alert)
+    
+    let action = UIAlertAction(
+      title: "OK",
+      style: .default,
+      handler: nil)
+    
+    alert.addAction(action)
+    present(alert, animated: true, completion: nil)
   }
 }
 
@@ -77,8 +94,7 @@ extension SearchViewController: UISearchBarDelegate {
       let url = iTunesURL(searchText: searchBar.text!)
       
       if let data = performStoreRequest(with: url) {
-        let results = parse(data: data)
-        print("Got results: \(results)")
+        searchResults = parse(data: data)
       }
       
       tableView.reloadData()
