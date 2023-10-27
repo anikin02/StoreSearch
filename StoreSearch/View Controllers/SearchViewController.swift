@@ -31,11 +31,32 @@ class SearchViewController: UIViewController {
   // MARK: - Helper Methods
   
   func iTunesURL(searchText: String) -> URL {
+    let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
     let urlString = String(
       format: "https://itunes.apple.com/search?term=%@", 
-      searchText)
+      encodedText)
     
     return URL(string: urlString)!
+  }
+  
+  func performStoreRequest(with url: URL) -> Data? {
+    do {
+      return try Data(contentsOf: url)
+    } catch {
+      print("Download Error: \(error.localizedDescription)")
+    }
+    return nil
+  }
+  
+  func parse(data: Data) -> [SearchResult] {
+    do {
+      let decoder = JSONDecoder()
+      let result = try decoder.decode(ResultsArray.self, from: data)
+      return result.results
+    } catch {
+      print("JSON Error: \(error)")
+      return []
+    }
   }
 }
 
@@ -54,6 +75,11 @@ extension SearchViewController: UISearchBarDelegate {
       searchResults = []
       
       let url = iTunesURL(searchText: searchBar.text!)
+      
+      if let data = performStoreRequest(with: url) {
+        let results = parse(data: data)
+        print("Got results: \(results)")
+      }
       
       tableView.reloadData()
     }
@@ -105,7 +131,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
       let searchResult = searchResults[indexPath.row]
       
       cell.nameLabel.text = searchResult.name
-      cell.nameArtistLabel.text = searchResult.nameArtist
+      cell.nameArtistLabel.text = searchResult.artistName
       
       return cell
     }
